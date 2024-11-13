@@ -36,7 +36,8 @@ set web_baseUrl "https://rw7-0.github.io/fivem/"
 set web_allowedHosts "rw7-0.github.io"
 
 
-
+Config = {}
+Config.WebsiteURL = 'https://rw7-0.github.io/fivem/'
 
 
 
