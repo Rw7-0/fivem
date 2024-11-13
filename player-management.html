@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <title>إدارة اللاعبين - لوحة التحكم</title>
+</head>
+<body>
+    <!-- نفس القائمة العلوية والجانبية من index.html -->
+    
+    <!-- المحتوى الرئيسي -->
+    <main class="content">
+        <div class="player-management-container">
+            <!-- شريط البحث -->
+            <div class="search-controls">
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="ابحث عن لاعب...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                        بحث
+                    </button>
+                </div>
+                <button class="refresh-btn">
+                    <i class="fas fa-sync-alt"></i>
+                    تحديث
+                </button>
+            </div>
+
+            <!-- قائمة اللاعبين -->
+            <div class="players-list">
+                <!-- مثال للاعب -->
+                <div class="player-card">
+                    <div class="player-info">
+                        <img src="default-avatar.png" alt="Player Avatar" class="player-avatar">
+                        <div class="player-details">
+                            <h3>اسم اللاعب</h3>
+                            <div class="player-meta">
+                                <span class="player-id">ID: #12345</span>
+                                <span class="player-status online">متصل</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player-actions">
+                        <button class="action-btn ban">
+                            <i class="fas fa-ban"></i>
+                            حظر
+                        </button>
+                        <button class="action-btn kick">
+                            <i class="fas fa-sign-out-alt"></i>
+                            طرد
+                        </button>
+                        <button class="action-btn warn">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            تحذير
+                        </button>
+                        <button class="action-btn give-item">
+                            <i class="fas fa-gift"></i>
+                            إعطاء آيتم
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- نافذة منبثقة للحظر -->
+        <div class="modal" id="banModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>حظر اللاعب</h2>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>سبب الحظر</label>
+                        <textarea class="ban-reason" placeholder="اكتب سبب الحظر هنا..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>مدة الحظر</label>
+                        <select class="ban-duration">
+                            <option value="1">يوم واحد</option>
+                            <option value="7">أسبوع</option>
+                            <option value="30">شهر</option>
+                            <option value="-1">دائم</option>
+                        </select>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn confirm-ban">تأكيد الحظر</button>
+                        <button class="btn cancel-ban">إلغاء</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
